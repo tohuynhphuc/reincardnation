@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://hx8v7m0l0j1b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d077n"]
+
+[node name="Mouse" type="Node2D" unique_id=1465750978]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1747643242]
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=164809579]
+shape = SubResource("CircleShape2D_d077n")
