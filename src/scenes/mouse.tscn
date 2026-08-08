@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://hx8v7m0l0j1b"]
 
+[ext_resource type="Script" uid="uid://dqallhub7g2a5" path="res://scripts/mouse.gd" id="1_5v7j2"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_d077n"]
 
-[node name="Mouse" type="Node2D" unique_id=1465750978]
+[node name="Mouse" type="Node2D" unique_id=1465750978 node_paths=PackedStringArray("area")]
+script = ExtResource("1_5v7j2")
+area = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1747643242]
 collision_layer = 512

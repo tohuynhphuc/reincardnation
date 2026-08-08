@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bw4gbtxnuhpq5" path="res://scenes/deadly_sin.tscn" id="1_2o3n4"]
 [ext_resource type="Script" uid="uid://cqc4f4ea2b6b" path="res://scripts/test_button.gd" id="2_u6e3q"]
 [ext_resource type="Script" uid="uid://cqy1a00ekldaa" path="res://scripts/game_manager.gd" id="2_yhovy"]
+[ext_resource type="PackedScene" uid="uid://hx8v7m0l0j1b" path="res://scenes/mouse.tscn" id="4_6xoaw"]
 
 [node name="Reincardnation" type="Node2D" unique_id=430046172]
 
@@ -65,3 +66,5 @@ cards = NodePath("../Cards")
 
 [node name="CardPosition" type="Marker2D" parent="." unique_id=978477501]
 position = Vector2(0, 76)
+
+[node name="Mouse" parent="." unique_id=1465750978 instance=ExtResource("4_6xoaw")]

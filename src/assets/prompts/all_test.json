@@ -1,58 +1,65 @@
 [
     {
-        "prompt_text": "Test 1. You see food on the table. There are hungry people. You are not that hungry. What do you do?",
-        "choice_one_text": "Eat",
-        "choice_one_consequences": {
-            "Greed": -10,
-            "Gluttony": -20
-        },
-        "choice_two_text": "Leave",
-        "choice_two_consequences": {
-            "Gluttony": 10,
-            "Greed": 10
-        },
-        "min_threshold": {
-            "Gluttony": 0
-        },
-        "max_threshold": {
-            "Gluttony": 100
+        "id1": {
+            "prompt_text": "Test 1. You see food on the table. There are hungry people. You are not that hungry. What do you do?",
+            "choice_one_text": "Eat",
+            "choice_one_consequences": {
+                "Greed": -10,
+                "Gluttony": -20
+            },
+            "choice_two_text": "Leave",
+            "choice_two_consequences": {
+                "Gluttony": 10,
+                "Greed": 10
+            },
+            "min_threshold": {
+                "Gluttony": 0
+            },
+            "max_threshold": {
+                "Gluttony": 100
+            },
+            "next_questions": ["id2", "id3"]
         }
     },
     {
-        "prompt_text": "Test 2. You want money. What do you do?",
-        "choice_one_text": "Steal",
-        "choice_one_consequences": {
-            "Greed": -10,
-            "Sloth": -20
-        },
-        "choice_two_text": "Work",
-        "choice_two_consequences": {
-            "Sloth": 10
-        },
-        "min_threshold": {
-            "Gluttony": 0
-        },
-        "max_threshold": {
-            "Gluttony": 100
+        "id2": {
+            "prompt_text": "Test 2. You want money. What do you do?",
+            "choice_one_text": "Steal",
+            "choice_one_consequences": {
+                "Greed": -10,
+                "Sloth": -20
+            },
+            "choice_two_text": "Work",
+            "choice_two_consequences": {
+                "Sloth": 10
+            },
+            "min_threshold": {
+                "Gluttony": 0
+            },
+            "max_threshold": {
+                "Gluttony": 100
+            }
         }
     },
     {
-        "prompt_text": "Test 3. Same as test 1 because I'm lazy. You see food on the table. There are hungry people. You are not that hungry. What do you do?",
-        "choice_one_text": "Eat",
-        "choice_one_consequences": {
-            "Greed": -20,
-            "Gluttony": -30
-        },
-        "choice_two_text": "Leave",
-        "choice_two_consequences": {
-            "Gluttony": 20,
-            "Greed": 20
-        },
-        "min_threshold": {
-            "Gluttony": 0
-        },
-        "max_threshold": {
-            "Gluttony": 100
+        "id3": {
+            "prompt_text": "Test 3. Same as test 1 because I'm lazy. You see food on the table. There are hungry people. You are not that hungry. What do you do?",
+            "choice_one_text": "Eat",
+            "choice_one_consequences": {
+                "Greed": -20,
+                "Gluttony": -30
+            },
+            "choice_two_text": "Leave",
+            "choice_two_consequences": {
+                "Gluttony": 20,
+                "Greed": 20
+            },
+            "min_threshold": {
+                "Gluttony": 0
+            },
+            "max_threshold": {
+                "Gluttony": 100
+            }
         }
     }
 ]
