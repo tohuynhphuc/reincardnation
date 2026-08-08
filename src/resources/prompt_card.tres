@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="PromptCardResource" format=3 uid="uid://dusqknk0bt8dc"]
+
+[ext_resource type="Script" uid="uid://ctwn3tk2hsnor" path="res://resources/prompt_card_resource.gd" id="1_novjb"]
+
+[resource]
+script = ExtResource("1_novjb")

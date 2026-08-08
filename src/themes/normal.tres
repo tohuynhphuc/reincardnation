@@ -1,0 +1,37 @@
+[gd_resource type="Theme" format=3 uid="uid://cft61735aql58"]
+
+[ext_resource type="FontFile" uid="uid://cw4yv7vygvwh8" path="res://assets/fonts/#9Slide03 SOFIAPROSOFT-BOLD.ttf" id="1_ft4jv"]
+[ext_resource type="FontFile" uid="uid://burhhu80lh8gj" path="res://assets/fonts/#9Slide03 SOFIAPROSOFT-LIGHT.ttf" id="2_5rwcp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvs4t"]
+bg_color = Color(0.8779174, 1, 0.8845623, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ft4jv"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.31231338, 0.99999994, 0.4598838, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[resource]
+Label/constants/outline_size = 3
+Label/fonts/font = ExtResource("1_ft4jv")
+ProgressBar/colors/font_color = Color(0.13137841, 0.13137859, 0.13137895, 1)
+ProgressBar/font_sizes/font_size = 30
+ProgressBar/fonts/font = ExtResource("1_ft4jv")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_nvs4t")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_ft4jv")
+RichTextLabel/constants/line_separation = 2
+RichTextLabel/constants/outline_size = 2
+RichTextLabel/constants/paragraph_separation = 5
+RichTextLabel/fonts/bold_font = ExtResource("1_ft4jv")
+RichTextLabel/fonts/normal_font = ExtResource("2_5rwcp")

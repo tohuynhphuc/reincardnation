@@ -1,0 +1,13 @@
+{
+  "choice_one_consequences": {
+    "0": 0,
+    "1": 0
+  },
+  "choice_one_text": "Choice A",
+  "choice_two_consequences": {
+    "0": 0,
+    "1": 0
+  },
+  "choice_two_text": "Choice B",
+  "prompt_text": "What do you do?"
+}

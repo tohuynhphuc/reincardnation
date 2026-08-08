@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bycwn87hnput0"]
+
+[ext_resource type="Script" uid="uid://dkhpfyr50wue0" path="res://scripts/prompt_card.gd" id="1_7rx4y"]
+[ext_resource type="Theme" uid="uid://cft61735aql58" path="res://themes/normal.tres" id="1_dgwjv"]
+[ext_resource type="Script" uid="uid://ctwn3tk2hsnor" path="res://resources/prompt_card_resource.gd" id="2_eecxq"]
+
+[sub_resource type="Resource" id="Resource_h4xs6"]
+script = ExtResource("2_eecxq")
+metadata/_custom_type_script = "uid://ctwn3tk2hsnor"
+
+[node name="PromptCard" type="Node2D" unique_id=486770967 node_paths=PackedStringArray("main_prompt", "choice_one", "choice_two")]
+script = ExtResource("1_7rx4y")
+main_prompt = NodePath("PanelContainer/VBoxContainer/MarginContainer/MainPrompt")
+choice_one = NodePath("PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/ChoiceOne")
+choice_two = NodePath("PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/ChoiceTwo")
+prompt_card = SubResource("Resource_h4xs6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1714266654]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -202.0
+offset_right = 142.0
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer" unique_id=2010478339]
+layout_mode = 2
+color = Color(0.7027245, 0.4610449, 0.7650219, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=511711235]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1842869249]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="MainPrompt" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=1252532868]
+layout_mode = 2
+theme = ExtResource("1_dgwjv")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+text = "lorem ipsumssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1239967846]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer2" unique_id=2071153554]
+layout_mode = 2
+
+[node name="ChoiceOne" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=715784403]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_dgwjv")
+theme_override_font_sizes/font_size = 24
+text = "Accept"
+vertical_alignment = 1
+
+[node name="ChoiceTwo" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1182900275]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_dgwjv")
+theme_override_font_sizes/font_size = 24
+text = "Deny"
+horizontal_alignment = 2
+vertical_alignment = 1

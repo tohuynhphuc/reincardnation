@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bw4gbtxnuhpq5"]
+
+[ext_resource type="Theme" uid="uid://cft61735aql58" path="res://themes/normal.tres" id="1_62gf6"]
+[ext_resource type="Script" uid="uid://b4srjks27oovn" path="res://scripts/deadly_sin.gd" id="1_grvcg"]
+
+[node name="DeadlySin" type="Control" unique_id=1664525612 node_paths=PackedStringArray("progress_bar", "label", "name_label")]
+custom_minimum_size = Vector2(375.15, 30)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 270.0
+offset_bottom = 30.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_grvcg")
+progress_bar = NodePath("ProgressBar")
+label = NodePath("ProgressBar/Value")
+name_label = NodePath("Name")
+
+[node name="Name" type="Label" parent="." unique_id=1574199410]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 27.0
+theme = ExtResource("1_62gf6")
+text = "TempText"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2023280483]
+custom_minimum_size = Vector2(270, 27)
+layout_mode = 0
+offset_left = 98.0
+offset_right = 368.0
+offset_bottom = 27.0
+theme = ExtResource("1_62gf6")
+value = 50.0
+show_percentage = false
+
+[node name="Value" type="Label" parent="ProgressBar" unique_id=1663470546]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_62gf6")
+theme_override_constants/paragraph_spacing = -22
+theme_override_font_sizes/font_size = 23
+text = "
+50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

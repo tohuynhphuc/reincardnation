@@ -11,8 +11,19 @@ config_version=5
 [application]
 
 config/name="Reincardnation"
+run/main_scene="uid://te4qedcybbbp"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*uid://dc01nir6guaog"
+Constants="*uid://cs6bqsmrk0mwa"
+SignalBus="*uid://bg1asbqhsyu1e"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [physics]
 

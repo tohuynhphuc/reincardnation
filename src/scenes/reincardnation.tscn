@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://co6ce1b36a1bw"]
+
+[ext_resource type="PackedScene" uid="uid://bw4gbtxnuhpq5" path="res://scenes/deadly_sin.tscn" id="1_2o3n4"]
+[ext_resource type="Script" uid="uid://cqc4f4ea2b6b" path="res://scripts/test_button.gd" id="2_u6e3q"]
+[ext_resource type="Script" uid="uid://cqy1a00ekldaa" path="res://scripts/game_manager.gd" id="2_yhovy"]
+
+[node name="Reincardnation" type="Node2D" unique_id=430046172]
+
+[node name="Sins" type="Node2D" parent="." unique_id=886675349]
+position = Vector2(-572, -312)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sins" unique_id=1257739071]
+custom_minimum_size = Vector2(260, 30)
+offset_bottom = 34.0
+
+[node name="DeadlySin" parent="Sins/VBoxContainer" unique_id=1356020594 instance=ExtResource("1_2o3n4")]
+layout_mode = 2
+
+[node name="DeadlySin2" parent="Sins/VBoxContainer" unique_id=1006937125 instance=ExtResource("1_2o3n4")]
+layout_mode = 2
+sin_name = 1
+
+[node name="DeadlySin3" parent="Sins/VBoxContainer" unique_id=1664525612 instance=ExtResource("1_2o3n4")]
+layout_mode = 2
+sin_name = 2
+
+[node name="DeadlySin4" parent="Sins/VBoxContainer" unique_id=895886379 instance=ExtResource("1_2o3n4")]
+layout_mode = 2
+sin_name = 3
+
+[node name="DeadlySin5" parent="Sins/VBoxContainer" unique_id=1951161738 instance=ExtResource("1_2o3n4")]
+layout_mode = 2
+sin_name = 4
+
+[node name="DeadlySin6" parent="Sins/VBoxContainer" unique_id=1063096914 instance=ExtResource("1_2o3n4")]
+layout_mode = 2
+sin_name = 5
+
+[node name="DeadlySin7" parent="Sins/VBoxContainer" unique_id=1365971486 instance=ExtResource("1_2o3n4")]
+layout_mode = 2
+sin_name = 6
+
+[node name="Cards" type="Node2D" parent="." unique_id=1891752941]
+
+[node name="===========================" type="Node" parent="." unique_id=769921115]
+
+[node name="Button" type="Button" parent="." unique_id=834242002 node_paths=PackedStringArray("game_manager")]
+offset_left = 524.0
+offset_top = -314.0
+offset_right = 568.0
+offset_bottom = -283.0
+text = "TEST"
+script = ExtResource("2_u6e3q")
+game_manager = NodePath("../GameManager")
+
+[node name="=========================" type="Node" parent="." unique_id=615943406]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=289850999]
+
+[node name="GameManager" type="Node" parent="." unique_id=123401121 node_paths=PackedStringArray("sin_bars")]
+script = ExtResource("2_yhovy")
+sin_bars = [NodePath("../Sins/VBoxContainer/DeadlySin"), NodePath("../Sins/VBoxContainer/DeadlySin2"), NodePath("../Sins/VBoxContainer/DeadlySin3"), NodePath("../Sins/VBoxContainer/DeadlySin4"), NodePath("../Sins/VBoxContainer/DeadlySin5"), NodePath("../Sins/VBoxContainer/DeadlySin6"), NodePath("../Sins/VBoxContainer/DeadlySin7")]

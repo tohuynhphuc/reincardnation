@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://te4qedcybbbp"]
+
+[ext_resource type="Script" uid="uid://b1mkst582dp5n" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Node2D" unique_id=653286584 node_paths=PackedStringArray("start_button")]
+script = ExtResource("1_l6cm7")
+start_button = NodePath("CanvasLayer/Start")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1555668491]
+
+[node name="Title" type="Label" parent="CanvasLayer" unique_id=1424062225]
+offset_left = 208.0
+offset_top = 92.0
+offset_right = 940.0
+offset_bottom = 227.0
+theme_override_font_sizes/font_size = 99
+text = "Reincardnation"
+
+[node name="Start" type="Button" parent="CanvasLayer" unique_id=1972935943]
+offset_left = 482.0
+offset_top = 325.0
+offset_right = 648.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 67
+text = "Start"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1348920764]
