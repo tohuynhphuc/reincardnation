@@ -1,0 +1,13 @@
+{
+  "prompt_text": "Test 3. Same as test 1 because I'm lazy. You see food on the table. There are hungry people. You are not that hungry. What do you do?",
+  "choice_one_text": "Eat",
+  "choice_one_consequences": {
+    "Greed": -20,
+    "Gluttony": -30
+  },
+  "choice_two_text": "Leave",
+  "choice_two_consequences": {
+    "Gluttony": 20,
+    "Greed": 20
+  }
+}

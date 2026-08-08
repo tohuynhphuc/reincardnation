@@ -1,0 +1,13 @@
+{
+  "prompt_text": "Test 1. You see food on the table. There are hungry people. You are not that hungry. What do you do?",
+  "choice_one_text": "Eat",
+  "choice_one_consequences": {
+    "Greed": -10,
+    "Gluttony": -20
+  },
+  "choice_two_text": "Leave",
+  "choice_two_consequences": {
+    "Gluttony": 10,
+    "Greed": 10
+  }
+}

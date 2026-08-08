@@ -57,6 +57,11 @@ game_manager = NodePath("../GameManager")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=289850999]
 
-[node name="GameManager" type="Node" parent="." unique_id=123401121 node_paths=PackedStringArray("sin_bars")]
+[node name="GameManager" type="Node" parent="." unique_id=123401121 node_paths=PackedStringArray("sin_bars", "card_position", "cards")]
 script = ExtResource("2_yhovy")
 sin_bars = [NodePath("../Sins/VBoxContainer/DeadlySin"), NodePath("../Sins/VBoxContainer/DeadlySin2"), NodePath("../Sins/VBoxContainer/DeadlySin3"), NodePath("../Sins/VBoxContainer/DeadlySin4"), NodePath("../Sins/VBoxContainer/DeadlySin5"), NodePath("../Sins/VBoxContainer/DeadlySin6"), NodePath("../Sins/VBoxContainer/DeadlySin7")]
+card_position = NodePath("../CardPosition")
+cards = NodePath("../Cards")
+
+[node name="CardPosition" type="Marker2D" parent="." unique_id=978477501]
+position = Vector2(0, 76)
