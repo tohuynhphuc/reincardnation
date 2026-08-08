@@ -66,11 +66,12 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4xs6"]
 size = Vector2(284, 404)
 
-[node name="PromptCard" type="Node2D" unique_id=486770967 node_paths=PackedStringArray("main_prompt", "choice_one", "choice_two")]
+[node name="PromptCard" type="Node2D" unique_id=486770967 node_paths=PackedStringArray("main_prompt", "choice_one", "choice_two", "animation_player")]
 script = ExtResource("1_7rx4y")
 main_prompt = NodePath("PanelContainer/VBoxContainer/MarginContainer/MainPrompt")
 choice_one = NodePath("PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/ChoiceOne")
 choice_two = NodePath("PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/ChoiceTwo")
+animation_player = NodePath("AnimationPlayer")
 mouse = 512
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1714266654]
