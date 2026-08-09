@@ -10,7 +10,7 @@ const SIN_MIN: int = 0
 
 var sin_scores: Array[int]
 
-var all_prompts_list: Array[Dictionary]
+var all_prompts_list: Dictionary
 
 
 func _ready() -> void:
@@ -20,26 +20,16 @@ func _ready() -> void:
 
     extract_prompts_from_jsons()
 
-    print(all_prompts_list[0])
-    cards.add_child(PromptCard.new_card(all_prompts_list[0]))
+    print(all_prompts_list["id1"])
+    cards.add_child(PromptCard.new_card(all_prompts_list["id1"]))
 
 
 func extract_prompts_from_jsons() -> void:
-    var temp_array = JSON.parse_string(
+    var temp_dict = JSON.parse_string(
         FileAccess.open("res://assets/prompts/all_test.json", FileAccess.READ).get_as_text()
-    ) as Array
+    ) as Dictionary
 
-    for value in temp_array:
-        all_prompts_list.append(value)
-
-    ### Old code: (not working)
-    # for prompt_json_path in Constants.PROMPT_JSONS:
-    #     var parsed_prompt_card = JSONConverter.parse(
-    #         FileAccess.open(prompt_json_path, FileAccess.READ).get_as_text(),
-    #         PromptCardResource,
-    #     ) as PromptCardResource
-    #     all_prompts_list.all_prompts_json_list.append(parsed_prompt_card)
-    #     print(parsed_prompt_card.prompt_text)
+    all_prompts_list = temp_dict
 
 
 func modify_sin(selected_sin: Constants.SINS, change_by: int) -> void:

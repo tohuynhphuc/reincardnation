@@ -7,6 +7,8 @@ const PROMPT_CARD_SCENE = preload(Constants.SCENE_PATHS.prompt_card)
 @export var choice_one: Label
 @export var choice_two: Label
 
+@export var animation_player: AnimationPlayer
+
 @export_flags_2d_physics var mouse: int
 
 # @export var prompt_card: Dictionary
@@ -15,7 +17,8 @@ var choice_2_consequences: Dictionary[Constants.SINS, int]
 
 var is_mouse_entered: bool = false
 var is_animation_playing: bool = false
-var mouse_original_position: Vector2 = Vector2.ZERO
+var original_mouse_position: Vector2 = Vector2.ZERO
+var mouse_movement_threshold: float = 100
 
 
 static func new_card(card_info: Dictionary) -> PromptCard:
@@ -26,23 +29,39 @@ static func new_card(card_info: Dictionary) -> PromptCard:
 
 func _input(event: InputEvent) -> void:
     if Input.is_action_just_pressed("mouse_click") and is_mouse_entered:
+        print("Case 1")
+
         # Mouse is hovering over card and click
-        pass
-        mouse_original_position = CollisionUtil.get_mouse_position()
+        original_mouse_position = CollisionUtil.get_mouse_position()
+        is_animation_playing = true
+
     elif Input.is_action_pressed("mouse_click") and is_animation_playing:
+        print("Case 2")
+
         # Mouse is holding, animation playing (mouse could be out of the card,
         # but as long as holding then it still counts)
-        pass
+        var current_mouse_position = CollisionUtil.get_mouse_position()
+        var mouse_move_distance = current_mouse_position.x - original_mouse_position.x
+        if mouse_move_distance < 0 and mouse_move_distance > -mouse_movement_threshold:
+            # Moving to the left
+            animation_player.play_section("swipe_left", 0, 1)
+
     elif Input.is_action_just_released("mouse_click"):
+        print("Case 3")
+
         # Mouse drop
         is_animation_playing = false
-        mouse_original_position = Vector2.ZERO
+        original_mouse_position = Vector2.ZERO
+
+    else:
+        print("Case 4???")
 
 
 func load_card(card_info: Dictionary) -> void:
     main_prompt.text = card_info[Constants.PROMPT_TEXT]
     choice_one.text = card_info[Constants.CHOICE_1_TEXT]
     choice_two.text = card_info[Constants.CHOICE_2_TEXT]
+
     var extracted_choice_1_consq: Dictionary = card_info[Constants.CHOICE_1_CONSQ]
     for _sin in extracted_choice_1_consq.keys():
         choice_1_consequences[Constants.SINS_TO_ENUM[_sin]] = extracted_choice_1_consq[_sin]
