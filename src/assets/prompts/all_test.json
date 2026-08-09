@@ -1,59 +1,648 @@
 {
-    "id1": {
-        "prompt_text": "Test 1. You see food on the table. There are hungry people. You are not that hungry. What do you do?",
-        "choice_one_text": "Eat",
+    "id1_first_day_of_school": {
+        "prompt_text": "It's your first day of school. Another child is sitting alone during lunch. What do you do?",
+        "choice_one_text": "Sit with them.",
         "choice_one_consequences": {
-            "Greed": -10,
-            "Gluttony": -20
+            "Envy": -1,
+            "Pride": -1
         },
-        "choice_two_text": "Leave",
+        "choice_two_text": "Leave them alone and sit with the popular kids.",
         "choice_two_consequences": {
-            "Gluttony": 10,
-            "Greed": 10
+            "Envy": 2,
+            "Pride": 2
         },
-        "min_threshold": {
-            "Gluttony": 0
-        },
-        "max_threshold": {
-            "Gluttony": 100
-        },
-        "next_questions": ["id2", "id3"]
+        "next_questions": [
+            "id2_school_grade",
+            "id3_cheating_test"
+        ]
     },
-    "id2": {
-        "prompt_text": "Test 2. You want money. What do you do?",
-        "choice_one_text": "Steal",
+    "id2_school_grade": {
+        "prompt_text": "You receive a much better grade than expected. Your parents praise you.",
+        "choice_one_text": "Thank them and keep working hard.",
         "choice_one_consequences": {
-            "Greed": -10,
-            "Sloth": -20
+            "Sloth": -1,
+            "Pride": 1
         },
-        "choice_two_text": "Work",
+        "choice_two_text": "Brag to your friends about being smarter than them.",
         "choice_two_consequences": {
-            "Sloth": 10
+            "Envy": 1,
+            "Pride": 4
         },
-        "min_threshold": {
-            "Gluttony": 0
-        },
-        "max_threshold": {
-            "Gluttony": 100
-        }
+        "next_questions": [
+            "id3_cheating_test",
+            "id4_allowance"
+        ]
     },
-    "id3": {
-        "prompt_text": "Test 3. Same as test 1 because I'm lazy. You see food on the table. There are hungry people. You are not that hungry. What do you do?",
-        "choice_one_text": "Eat",
+    "id3_cheating_test": {
+        "prompt_text": "You are struggling through an exam.",
+        "choice_one_text": "Cheat off your friend while nobody is looking.",
         "choice_one_consequences": {
-            "Greed": -20,
-            "Gluttony": -30
+            "Greed": 2,
+            "Pride": 3
         },
-        "choice_two_text": "Leave",
+        "choice_two_text": "Accept that you have failed.",
         "choice_two_consequences": {
-            "Gluttony": 20,
-            "Greed": 20
+            "Pride": -1
+        },
+        "next_questions": [
+            "id4_allowance",
+            "id5_first_job"
+        ]
+    },
+    "id4_allowance": {
+        "prompt_text": "You receive your first allowance. Your friend asks to borrow some.",
+        "choice_one_text": "Lend them.",
+        "choice_one_consequences": {
+            "Greed": -2
+        },
+        "choice_two_text": "Tell them to work for it.",
+        "choice_two_consequences": {
+            "Greed": 3,
+            "Wrath": 3
+        },
+        "next_questions": [
+            "id5_first_job",
+            "id6_school_crush"
+        ]
+    },
+    "id5_first_job": {
+        "prompt_text": "You're offered 2 part time jobs. One with less pay but easy to deal with, the other one is much more difficult but pay a huge sum",
+        "choice_one_text": "Take the easier job.",
+        "choice_one_consequences": {
+            "Sloth": 3
+        },
+        "choice_two_text": "Take the harder job for more money.",
+        "choice_two_consequences": {
+            "Greed": 3,
+            "Sloth": -2
+        },
+        "next_questions": [
+            "id6_school_crush",
+            "id8_exam"
+        ]
+    },
+    "id6_school_crush": {
+        "prompt_text": "Your crush really like asks you out on a date.",
+        "choice_one_text": "Go on the date.",
+        "choice_one_consequences": {
+            "Lust": 3,
+            "Pride": 3
+        },
+        "choice_two_text": "Turn them down because you're nervous.",
+        "choice_two_consequences": {
+            "Lust": -3,
+            "Sloth": 4,
+            "Pride": -4
+        },
+        "next_questions": [
+            "id7_party",
+            "id8_exam"
+        ]
+    },
+    "id7_party": {
+        "prompt_text": "Your friends invite you to a party but the exams are coming up soon.",
+        "choice_one_text": "Go and have a blast.",
+        "choice_one_consequences": {
+            "Gluttony": 4,
+            "Lust": 2,
+            "Pride": -3
+        },
+        "choice_two_text": "Stay home and study.",
+        "choice_two_consequences": {
+            "Sloth": -2,
+            "Pride": 3
+        },
+        "next_questions": [
+            "id8_exam",
+            "id9_graduation"
+        ]
+    },
+    "id8_exam": {
+        "prompt_text": "You are exhausted before the final exam.",
+        "choice_one_text": "Study late into the night.",
+        "choice_one_consequences": {
+            "Envy": 2,
+            "Sloth": -4,
+            "Pride": 5
+        },
+        "choice_two_text": "Sleep and accept whatever grade you get.",
+        "choice_two_consequences": {
+            "Sloth": 3
+        },
+        "next_questions": [
+            "id9_graduation",
+            "id5_first_job"
+        ]
+    },
+    "id9_graduation": {
+        "prompt_text": "You graduate. Your family wants you to celebrate, but you're worried about money.",
+        "choice_one_text": "Celebrate anyway.",
+        "choice_one_consequences": {
+            "Gluttony": 2,
+            "Pride": 1
+        },
+        "choice_two_text": "Skip the celebration and save your money.",
+        "choice_two_consequences": {
+            "Greed": 2,
+            "Sloth": 3
+        },
+        "next_questions": [
+            "id10_first_fulltime_job",
+            "id11_first_paycheck"
+        ]
+    },
+    "id10_first_fulltime_job": {
+        "prompt_text": "You get your first full-time job. Your boss offers overtime for extra pay.",
+        "choice_one_text": "Work every extra hour you can.",
+        "choice_one_consequences": {
+            "Greed": 4,
+            "Envy": 3,
+            "Sloth": -2,
+            "Pride": 3
+        },
+        "choice_two_text": "Keep your evenings free.",
+        "choice_two_consequences": {
+            "Greed": -1,
+            "Sloth": 2
+        },
+        "next_questions": [
+            "id11_first_paycheck",
+            "id14_promotion"
+        ]
+    },
+    "id11_first_paycheck": {
+        "prompt_text": "Your first paycheck arrives. You can finally afford the sport car you've wanted for years.",
+        "choice_one_text": "Buy it immediately.",
+        "choice_one_consequences": {
+            "Greed": 2,
+            "Pride": 2
+        },
+        "choice_two_text": "Save the money.",
+        "choice_two_consequences": {
+            "Greed": -2,
+            "Pride": 1
+        },
+        "next_questions": [
+            "id12_roommate",
+            "id15_money_problem",
+            "id20_expensive_house"
+        ]
+    },
+    "id12_roommate": {
+        "prompt_text": "You moved out with your friends. They keeps leaving chores for you.",
+        "choice_one_text": "Clean up and say nothing.",
+        "choice_one_consequences": {
+            "Sloth": -3,
+            "Wrath": 5
+        },
+        "choice_two_text": "Confront them angrily.",
+        "choice_two_consequences": {
+            "Wrath": 5,
+            "Pride": 2
+        },
+        "next_questions": [
+            "id13_relationship",
+            "id14_promotion"
+        ]
+    },
+    "id13_relationship": {
+        "prompt_text": "Your relationship becomes serious. Your partner asks you to spend more time together.",
+        "choice_one_text": "Make time for them.",
+        "choice_one_consequences": {
+            "Lust": 3,
+            "Sloth": -2
+        },
+        "choice_two_text": "Tell them your career comes first.",
+        "choice_two_consequences": {
+            "Greed": 2,
+            "Lust": -2,
+            "Pride": 3
+        },
+        "next_questions": [
+            "id14_promotion",
+            "id16_marriage"
+        ]
+    },
+    "id14_promotion": {
+        "prompt_text": "A coworker gets promoted instead of you. You think you deserved it.",
+        "choice_one_text": "Congratulate them and improve yourself.",
+        "choice_one_consequences": {
+            "Envy": -2,
+            "Pride": -1
+        },
+        "choice_two_text": "Complain that they didn't deserve it.",
+        "choice_two_consequences": {
+            "Envy": 5,
+            "Wrath": 3
+        },
+        "next_questions": [
+            "id15_money_problem",
+            "id21_friends_success",
+            "id18_career_shortcut"
+        ]
+    },
+    "id15_money_problem": {
+        "prompt_text": "A car accident leaves you short on cash.",
+        "choice_one_text": "Ask a friend for help.",
+        "choice_one_consequences": {
+            "Greed": -2,
+            "Pride": -5
+        },
+        "choice_two_text": "Take a risky loan to cover it.",
+        "choice_two_consequences": {
+            "Greed": 3,
+            "Pride": 2
         },
         "min_threshold": {
-            "Gluttony": 0
+            "Greed": 30
+        },
+        "next_questions": [
+            "id16_marriage",
+            "id18_career_shortcut",
+            "id20_expensive_house"
+        ]
+    },
+    "id16_marriage": {
+        "prompt_text": "You are considering marriage with your partner.",
+        "choice_one_text": "Commit to building a life together.",
+        "choice_one_consequences": {
+            "Lust": 1,
+            "Pride": -1
+        },
+        "choice_two_text": "Keep the relationship casual.",
+        "choice_two_consequences": {
+            "Lust": 4
+        },
+        "next_questions": [
+            "id17_family",
+            "id21_friends_success"
+        ]
+    },
+    "id17_family": {
+        "prompt_text": "You and your partner decide to have a child. One night, after a long day at work, the baby starts crying.",
+        "choice_one_text": "Get up and take care of them.",
+        "choice_one_consequences": {
+            "Sloth": -3,
+            "Pride": -1
+        },
+        "choice_two_text": "Tell your partner to handle it and complain about your day.",
+        "choice_two_consequences": {
+            "Sloth": 3,
+            "Wrath": 7,
+            "Pride": 5
         },
         "max_threshold": {
-            "Gluttony": 100
-        }
+            "Pride": 70
+        },
+        "next_questions": [
+            "id18_career_shortcut",
+            "id22_restaurant",
+            "id23_family_argument"
+        ]
+    },
+    "id18_career_shortcut": {
+        "prompt_text": "Your company discovers a way to hide a mistake from a client. Your boss asks you to help.",
+        "choice_one_text": "Go along with it to protect your career.",
+        "choice_one_consequences": {
+            "Greed": 5,
+            "Pride": 2
+        },
+        "choice_two_text": "Refuse and tell the client.",
+        "choice_two_consequences": {
+            "Wrath": 2,
+            "Pride": -2
+        },
+        "min_threshold": {
+            "Pride": 45
+        },
+        "next_questions": [
+            "id19_neighbor",
+            "id20_expensive_house",
+            "id21_friends_success"
+        ]
+    },
+    "id19_neighbor": {
+        "prompt_text": "A neighbor asks you to watch their house while they are away.",
+        "choice_one_text": "Agree.",
+        "choice_one_consequences": {
+            "Envy": -2,
+            "Pride": -2
+        },
+        "choice_two_text": "Agree, but ask for payment.",
+        "choice_two_consequences": {
+            "Greed": 3,
+            "Pride": 3
+        },
+        "next_questions": [
+            "id20_expensive_house",
+            "id24_charity"
+        ]
+    },
+    "id20_expensive_house": {
+        "prompt_text": "You have saved up enough to afford a larger house, but it would stretch your finances.",
+        "choice_one_text": "Buy it for the status.",
+        "choice_one_consequences": {
+            "Greed": 4,
+            "Pride": 4
+        },
+        "choice_two_text": "Stay somewhere modest.",
+        "choice_two_consequences": {
+            "Greed": -2,
+            "Pride": -1
+        },
+        "min_threshold": {
+            "Greed": 30,
+            "Pride": 40
+        },
+        "next_questions": [
+            "id21_friends_success",
+            "id22_restaurant",
+            "id25_midlife"
+        ]
+    },
+    "id21_friends_success": {
+        "prompt_text": "A friend becomes more successful than you.",
+        "choice_one_text": "Be happy for them.",
+        "choice_one_consequences": {
+            "Envy": -4
+        },
+        "choice_two_text": "Throw dirt to their name.",
+        "choice_two_consequences": {
+            "Envy": 10,
+            "Pride": 2
+        },
+        "next_questions": [
+            "id22_restaurant",
+            "id23_family_argument",
+            "id25_midlife"
+        ]
+    },
+    "id22_restaurant": {
+        "prompt_text": "You have a free evening. You could cook at home or spend heavily at a restaurant.",
+        "choice_one_text": "Cook a simple meal at home.",
+        "choice_one_consequences": {
+            "Greed": -1,
+            "Gluttony": -1
+        },
+        "choice_two_text": "Order far more food than you need.",
+        "choice_two_consequences": {
+            "Greed": 2,
+            "Gluttony": 5
+        },
+        "min_threshold": {
+            "Gluttony": 30
+        },
+        "next_questions": [
+            "id23_family_argument",
+            "id24_charity",
+            "id25_midlife"
+        ]
+    },
+    "id23_family_argument": {
+        "prompt_text": "A family member insults you during an argument.",
+        "choice_one_text": "Take a chill pill before things get worse.",
+        "choice_one_consequences": {
+            "Wrath": -3,
+            "Pride": -1
+        },
+        "choice_two_text": "Insult them back with more hurtful language.",
+        "choice_two_consequences": {
+            "Wrath": 6,
+            "Pride": 3
+        },
+        "min_threshold": {
+            "Wrath": 30
+        },
+        "next_questions": [
+            "id24_charity",
+            "id25_midlife",
+            "id21_friends_success"
+        ]
+    },
+    "id24_charity": {
+        "prompt_text": "You see a charity collecting donations outside a shop.",
+        "choice_one_text": "Donate something.",
+        "choice_one_consequences": {
+            "Greed": -2,
+            "Pride": -1
+        },
+        "choice_two_text": "Keep walking, mind your own business.",
+        "choice_two_consequences": {
+            "Greed": 1
+        },
+        "max_threshold": {
+            "Greed": 70,
+            "Pride": 45
+        },
+        "next_questions": [
+            "id25_midlife",
+            "id26_old_friend",
+            "id22_restaurant"
+        ]
+    },
+    "id25_midlife": {
+        "prompt_text": "You take a look back at your life and realize you have been working constantly.",
+        "choice_one_text": "Take some time to reconnect with your damily and friends.",
+        "choice_one_consequences": {
+            "Sloth": -2,
+            "Pride": -2
+        },
+        "choice_two_text": "Push yourself even harder while you still can.",
+        "choice_two_consequences": {
+            "Greed": 3,
+            "Sloth": 4
+        },
+        "next_questions": [
+            "id26_old_friend",
+            "id27_retirement",
+            "id24_charity"
+        ]
+    },
+    "id26_old_friend": {
+        "prompt_text": "An old friend you haven't seen in years contacts you.",
+        "choice_one_text": "Make time to meet them.",
+        "choice_one_consequences": {
+            "Envy": -2,
+            "Pride": -1
+        },
+        "choice_two_text": "Say you're too busy.",
+        "choice_two_consequences": {
+            "Pride": 2
+        },
+        "next_questions": [
+            "id27_retirement",
+            "id28_legacy",
+            "id21_friends_success"
+        ]
+    },
+    "id27_retirement": {
+        "prompt_text": "You are finally able to retire.",
+        "choice_one_text": "Spend your savings enjoying life.",
+        "choice_one_consequences": {
+            "Greed": -2,
+            "Gluttony": 2,
+            "Pride": 1
+        },
+        "choice_two_text": "Keep working because you hate losing income.",
+        "choice_two_consequences": {
+            "Greed": 5,
+            "Sloth": -2
+        },
+        "next_questions": [
+            "id28_legacy",
+            "id29_final_years",
+            "id26_old_friend"
+        ]
+    },
+    "id28_legacy": {
+        "prompt_text": "Your family asks what you want to leave behind.",
+        "choice_one_text": "Leave most of it to your family and charity.",
+        "choice_one_consequences": {
+            "Greed": -5,
+            "Pride": -2
+        },
+        "choice_two_text": "Keep control of everything until the end.",
+        "choice_two_consequences": {
+            "Greed": 5,
+            "Pride": 4
+        },
+        "next_questions": [
+            "id29_final_years",
+            "id27_retirement",
+            "id24_charity"
+        ]
+    },
+    "id29_final_years": {
+        "prompt_text": "You are old now. A peaceful day gives you time to think about your life.",
+        "choice_one_text": "Accept that your life had both the ups and the downs of it.",
+        "choice_one_consequences": {
+            "Wrath": -2,
+            "Pride": -3
+        },
+        "choice_two_text": "Focus on everything you should have achieved.",
+        "choice_two_consequences": {
+            "Envy": 3,
+            "Pride": 4
+        },
+        "next_questions": [
+            "id30_death_greed",
+            "id31_death_gluttony",
+            "id32_death_lust",
+            "id33_death_envy",
+            "id34_death_sloth",
+            "id35_death_wrath",
+            "id36_death_pride",
+            "id37_old_age_death"
+        ]
+    },
+    "id30_death_greed": {
+        "prompt_text": "Your greed has consumed your life. Guess money can't buy you out of this situation then.",
+        "choice_one_text": "Accept your fate.",
+        "choice_one_consequences": {
+        },
+        "choice_two_text": "Accept your fate.",
+        "choice_two_consequences": {
+        },
+        "min_threshold": {
+            "Greed": 80
+        },
+        "next_questions": []
+    },
+    "id31_death_gluttony": {
+        "prompt_text": "Your body can no longer endure your excess. You consumed all, and now you have been consumed.",
+        "choice_one_text": "Accept your fate.",
+        "choice_one_consequences": {
+        },
+        "choice_two_text": "Accept your fate.",
+        "choice_two_consequences": {
+        },
+        "min_threshold": {
+            "Gluttony": 80
+        },
+        "next_questions": []
+    },
+    "id32_death_lust": {
+        "prompt_text": "Your reckless pursuit of pleasure finally destroys your health and relationships beyond repair.",
+        "choice_one_text": "Accept your fate.",
+        "choice_one_consequences": {
+        },
+        "choice_two_text": "Accept your fate.",
+        "choice_two_consequences": {
+        },
+        "min_threshold": {
+            "Lust": 80
+        },
+        "next_questions": []
+    },
+    "id33_death_envy": {
+        "prompt_text": "Your obsession with other people's lives consumes you. You are now same as your competitor, dead.",
+        "choice_one_text": "Accept your fate.",
+        "choice_one_consequences": {
+        },
+        "choice_two_text": "Accept your fate.",
+        "choice_two_consequences": {
+        },
+        "min_threshold": {
+            "Envy": 80
+        },
+        "next_questions": []
+    },
+    "id34_death_sloth": {
+        "prompt_text": "Years of neglect catch up with you. Your body decided to be like you too.",
+        "choice_one_text": "Accept your fate.",
+        "choice_one_consequences": {
+        },
+        "choice_two_text": "Accept your fate.",
+        "choice_two_consequences": {
+        },
+        "min_threshold": {
+            "Sloth": 100
+        },
+        "next_questions": []
+    },
+    "id35_death_wrath": {
+        "prompt_text": "One final act of rage ends your life.",
+        "choice_one_text": "Accept your fate.",
+        "choice_one_consequences": {
+        },
+        "choice_two_text": "Accept your fate.",
+        "choice_two_consequences": {
+        },
+        "min_threshold": {
+            "Wrath": 100
+        },
+        "next_questions": []
+    },
+    "id36_death_pride": {
+        "prompt_text": "With the same fate as Lucifer, pride do be your downfall after all.",
+        "choice_one_text": "Accept your fate.",
+        "choice_one_consequences": {
+        },
+        "choice_two_text": "Accept your fate.",
+        "choice_two_consequences": {
+        },
+        "min_threshold": {
+            "Pride": 100
+        },
+        "next_questions": []
+    },
+    "id37_old_age_death": {
+        "prompt_text": "Your long life finally comes to a peaceful end.",
+        "choice_one_text": "Accept the end of your journey.",
+        "choice_one_consequences": {
+        },
+        "choice_two_text": "Accept the end of your journey.",
+        "choice_two_consequences": {
+        },
+        "max_threshold": {
+            "Greed": 80,
+            "Gluttony": 80,
+            "Lust": 80,
+            "Envy": 80,
+            "Sloth": 80,
+            "Wrath": 80,
+            "Pride": 80
+        },
+        "next_questions": []
     }
 }
