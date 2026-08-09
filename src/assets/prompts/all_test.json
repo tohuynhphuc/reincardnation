@@ -11,10 +11,7 @@
             "Envy": 2,
             "Pride": 2
         },
-        "next_questions": [
-            "id2_school_grade",
-            "id3_cheating_test"
-        ]
+        "next_questions": ["id2_school_grade", "id3_cheating_test"]
     },
     "id2_school_grade": {
         "prompt_text": "You receive a much better grade than expected. Your parents praise you.",
@@ -28,10 +25,7 @@
             "Envy": 1,
             "Pride": 4
         },
-        "next_questions": [
-            "id3_cheating_test",
-            "id4_allowance"
-        ]
+        "next_questions": ["id3_cheating_test", "id4_allowance"]
     },
     "id3_cheating_test": {
         "prompt_text": "You are struggling through an exam.",
@@ -44,10 +38,7 @@
         "choice_two_consequences": {
             "Pride": -1
         },
-        "next_questions": [
-            "id4_allowance",
-            "id5_first_job"
-        ]
+        "next_questions": ["id4_allowance", "id5_first_job"]
     },
     "id4_allowance": {
         "prompt_text": "You receive your first allowance. Your friend asks to borrow some.",
@@ -60,10 +51,7 @@
             "Greed": 3,
             "Wrath": 3
         },
-        "next_questions": [
-            "id5_first_job",
-            "id6_school_crush"
-        ]
+        "next_questions": ["id5_first_job", "id6_school_crush"]
     },
     "id5_first_job": {
         "prompt_text": "You're offered 2 part time jobs. One with less pay but easy to deal with, the other one is much more difficult but pay a huge sum",
@@ -76,10 +64,7 @@
             "Greed": 3,
             "Sloth": -2
         },
-        "next_questions": [
-            "id6_school_crush",
-            "id8_exam"
-        ]
+        "next_questions": ["id6_school_crush", "id8_exam"]
     },
     "id6_school_crush": {
         "prompt_text": "Your crush really like asks you out on a date.",
@@ -94,10 +79,7 @@
             "Sloth": 4,
             "Pride": -4
         },
-        "next_questions": [
-            "id7_party",
-            "id8_exam"
-        ]
+        "next_questions": ["id7_party", "id8_exam"]
     },
     "id7_party": {
         "prompt_text": "Your friends invite you to a party but the exams are coming up soon.",
@@ -112,10 +94,7 @@
             "Sloth": -2,
             "Pride": 3
         },
-        "next_questions": [
-            "id8_exam",
-            "id9_graduation"
-        ]
+        "next_questions": ["id8_exam", "id9_graduation"]
     },
     "id8_exam": {
         "prompt_text": "You are exhausted before the final exam.",
@@ -129,10 +108,7 @@
         "choice_two_consequences": {
             "Sloth": 3
         },
-        "next_questions": [
-            "id9_graduation",
-            "id5_first_job"
-        ]
+        "next_questions": ["id9_graduation", "id5_first_job"]
     },
     "id9_graduation": {
         "prompt_text": "You graduate. Your family wants you to celebrate, but you're worried about money.",
@@ -146,10 +122,7 @@
             "Greed": 2,
             "Sloth": 3
         },
-        "next_questions": [
-            "id10_first_fulltime_job",
-            "id11_first_paycheck"
-        ]
+        "next_questions": ["id10_first_fulltime_job", "id11_first_paycheck"]
     },
     "id10_first_fulltime_job": {
         "prompt_text": "You get your first full-time job. Your boss offers overtime for extra pay.",
@@ -165,10 +138,7 @@
             "Greed": -1,
             "Sloth": 2
         },
-        "next_questions": [
-            "id11_first_paycheck",
-            "id14_promotion"
-        ]
+        "next_questions": ["id11_first_paycheck", "id14_promotion"]
     },
     "id11_first_paycheck": {
         "prompt_text": "Your first paycheck arrives. You can finally afford the sport car you've wanted for years.",
@@ -200,10 +170,7 @@
             "Wrath": 5,
             "Pride": 2
         },
-        "next_questions": [
-            "id13_relationship",
-            "id14_promotion"
-        ]
+        "next_questions": ["id13_relationship", "id14_promotion"]
     },
     "id13_relationship": {
         "prompt_text": "Your relationship becomes serious. Your partner asks you to spend more time together.",
@@ -218,10 +185,7 @@
             "Lust": -2,
             "Pride": 3
         },
-        "next_questions": [
-            "id14_promotion",
-            "id16_marriage"
-        ]
+        "next_questions": ["id14_promotion", "id16_marriage"]
     },
     "id14_promotion": {
         "prompt_text": "A coworker gets promoted instead of you. You think you deserved it.",
@@ -273,10 +237,7 @@
         "choice_two_consequences": {
             "Lust": 4
         },
-        "next_questions": [
-            "id17_family",
-            "id21_friends_success"
-        ]
+        "next_questions": ["id17_family", "id21_friends_success"]
     },
     "id17_family": {
         "prompt_text": "You and your partner decide to have a child. One night, after a long day at work, the baby starts crying.",
@@ -333,10 +294,7 @@
             "Greed": 3,
             "Pride": 3
         },
-        "next_questions": [
-            "id20_expensive_house",
-            "id24_charity"
-        ]
+        "next_questions": ["id20_expensive_house", "id24_charity"]
     },
     "id20_expensive_house": {
         "prompt_text": "You have saved up enough to afford a larger house, but it would stretch your finances.",
@@ -434,11 +392,7 @@
             "Greed": 70,
             "Pride": 45
         },
-        "next_questions": [
-            "id25_midlife",
-            "id26_old_friend",
-            "id22_restaurant"
-        ]
+        "next_questions": ["id25_midlife", "id26_old_friend", "id22_restaurant"]
     },
     "id25_midlife": {
         "prompt_text": "You take a look back at your life and realize you have been working constantly.",
@@ -452,11 +406,7 @@
             "Greed": 3,
             "Sloth": 4
         },
-        "next_questions": [
-            "id26_old_friend",
-            "id27_retirement",
-            "id24_charity"
-        ]
+        "next_questions": ["id26_old_friend", "id27_retirement", "id24_charity"]
     },
     "id26_old_friend": {
         "prompt_text": "An old friend you haven't seen in years contacts you.",
@@ -488,11 +438,7 @@
             "Greed": 5,
             "Sloth": -2
         },
-        "next_questions": [
-            "id28_legacy",
-            "id29_final_years",
-            "id26_old_friend"
-        ]
+        "next_questions": ["id28_legacy", "id29_final_years", "id26_old_friend"]
     },
     "id28_legacy": {
         "prompt_text": "Your family asks what you want to leave behind.",
@@ -538,11 +484,9 @@
     "id30_death_greed": {
         "prompt_text": "Your greed has consumed your life. Guess money can't buy you out of this situation then.",
         "choice_one_text": "Accept your fate.",
-        "choice_one_consequences": {
-        },
+        "choice_one_consequences": {},
         "choice_two_text": "Accept your fate.",
-        "choice_two_consequences": {
-        },
+        "choice_two_consequences": {},
         "min_threshold": {
             "Greed": 80
         },
@@ -551,11 +495,9 @@
     "id31_death_gluttony": {
         "prompt_text": "Your body can no longer endure your excess. You consumed all, and now you have been consumed.",
         "choice_one_text": "Accept your fate.",
-        "choice_one_consequences": {
-        },
+        "choice_one_consequences": {},
         "choice_two_text": "Accept your fate.",
-        "choice_two_consequences": {
-        },
+        "choice_two_consequences": {},
         "min_threshold": {
             "Gluttony": 80
         },
@@ -564,11 +506,9 @@
     "id32_death_lust": {
         "prompt_text": "Your reckless pursuit of pleasure finally destroys your health and relationships beyond repair.",
         "choice_one_text": "Accept your fate.",
-        "choice_one_consequences": {
-        },
+        "choice_one_consequences": {},
         "choice_two_text": "Accept your fate.",
-        "choice_two_consequences": {
-        },
+        "choice_two_consequences": {},
         "min_threshold": {
             "Lust": 80
         },
@@ -577,11 +517,9 @@
     "id33_death_envy": {
         "prompt_text": "Your obsession with other people's lives consumes you. You are now same as your competitor, dead.",
         "choice_one_text": "Accept your fate.",
-        "choice_one_consequences": {
-        },
+        "choice_one_consequences": {},
         "choice_two_text": "Accept your fate.",
-        "choice_two_consequences": {
-        },
+        "choice_two_consequences": {},
         "min_threshold": {
             "Envy": 80
         },
@@ -590,50 +528,42 @@
     "id34_death_sloth": {
         "prompt_text": "Years of neglect catch up with you. Your body decided to be like you too.",
         "choice_one_text": "Accept your fate.",
-        "choice_one_consequences": {
-        },
+        "choice_one_consequences": {},
         "choice_two_text": "Accept your fate.",
-        "choice_two_consequences": {
-        },
+        "choice_two_consequences": {},
         "min_threshold": {
-            "Sloth": 100
+            "Sloth": 99
         },
         "next_questions": []
     },
     "id35_death_wrath": {
         "prompt_text": "One final act of rage ends your life.",
         "choice_one_text": "Accept your fate.",
-        "choice_one_consequences": {
-        },
+        "choice_one_consequences": {},
         "choice_two_text": "Accept your fate.",
-        "choice_two_consequences": {
-        },
+        "choice_two_consequences": {},
         "min_threshold": {
-            "Wrath": 100
+            "Wrath": 99
         },
         "next_questions": []
     },
     "id36_death_pride": {
         "prompt_text": "With the same fate as Lucifer, pride do be your downfall after all.",
         "choice_one_text": "Accept your fate.",
-        "choice_one_consequences": {
-        },
+        "choice_one_consequences": {},
         "choice_two_text": "Accept your fate.",
-        "choice_two_consequences": {
-        },
+        "choice_two_consequences": {},
         "min_threshold": {
-            "Pride": 100
+            "Pride": 99
         },
         "next_questions": []
     },
     "id37_old_age_death": {
         "prompt_text": "Your long life finally comes to a peaceful end.",
         "choice_one_text": "Accept the end of your journey.",
-        "choice_one_consequences": {
-        },
+        "choice_one_consequences": {},
         "choice_two_text": "Accept the end of your journey.",
-        "choice_two_consequences": {
-        },
+        "choice_two_consequences": {},
         "max_threshold": {
             "Greed": 80,
             "Gluttony": 80,

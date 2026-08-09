@@ -3,7 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://bw4gbtxnuhpq5" path="res://scenes/deadly_sin.tscn" id="1_2o3n4"]
 [ext_resource type="Script" uid="uid://cqc4f4ea2b6b" path="res://scripts/test_button.gd" id="2_u6e3q"]
 [ext_resource type="Script" uid="uid://cqy1a00ekldaa" path="res://scripts/game_manager.gd" id="2_yhovy"]
+[ext_resource type="Theme" uid="uid://cft61735aql58" path="res://themes/normal.tres" id="2_yl6u6"]
 [ext_resource type="PackedScene" uid="uid://hx8v7m0l0j1b" path="res://scenes/mouse.tscn" id="4_6xoaw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xoaw"]
+size = Vector2(412, 233)
 
 [node name="Reincardnation" type="Node2D" unique_id=430046172]
 
@@ -43,6 +47,56 @@ sin_name = 6
 
 [node name="Cards" type="Node2D" parent="." unique_id=1891752941]
 
+[node name="ChoiceArea" type="Node2D" parent="." unique_id=1833201863]
+
+[node name="ChoiceOne" type="Area2D" parent="ChoiceArea" unique_id=806847183]
+position = Vector2(-307, 209)
+collision_layer = 16
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChoiceArea/ChoiceOne" unique_id=398198785]
+shape = SubResource("RectangleShape2D_6xoaw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChoiceArea/ChoiceOne" unique_id=790307658]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -82.0
+offset_right = 206.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_yl6u6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChoiceOne2" type="Area2D" parent="ChoiceArea" unique_id=2000073588]
+position = Vector2(298, 209)
+collision_layer = 32
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChoiceArea/ChoiceOne2" unique_id=1678450952]
+shape = SubResource("RectangleShape2D_6xoaw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChoiceArea/ChoiceOne2" unique_id=2133903835]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -82.0
+offset_right = 206.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_yl6u6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="===========================" type="Node" parent="." unique_id=769921115]
 
 [node name="Button" type="Button" parent="." unique_id=834242002 node_paths=PackedStringArray("game_manager")]
@@ -58,11 +112,17 @@ game_manager = NodePath("../GameManager")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=289850999]
 
-[node name="GameManager" type="Node" parent="." unique_id=123401121 node_paths=PackedStringArray("sin_bars", "card_position", "cards")]
+[node name="GameManager" type="Node" parent="." unique_id=123401121 node_paths=PackedStringArray("sin_bars", "card_position", "cards", "choice_one_area", "choice_one_label", "choice_two_area", "choice_two_label")]
 script = ExtResource("2_yhovy")
 sin_bars = [NodePath("../Sins/VBoxContainer/DeadlySin"), NodePath("../Sins/VBoxContainer/DeadlySin2"), NodePath("../Sins/VBoxContainer/DeadlySin3"), NodePath("../Sins/VBoxContainer/DeadlySin4"), NodePath("../Sins/VBoxContainer/DeadlySin5"), NodePath("../Sins/VBoxContainer/DeadlySin6"), NodePath("../Sins/VBoxContainer/DeadlySin7")]
 card_position = NodePath("../CardPosition")
 cards = NodePath("../Cards")
+choice_one_area = NodePath("../ChoiceArea/ChoiceOne")
+choice_one_label = NodePath("../ChoiceArea/ChoiceOne/RichTextLabel")
+choice_two_area = NodePath("../ChoiceArea/ChoiceOne2")
+choice_two_label = NodePath("../ChoiceArea/ChoiceOne2/RichTextLabel")
+choice_one_layer = 16
+choice_two_layer = 32
 
 [node name="CardPosition" type="Marker2D" parent="." unique_id=978477501]
 position = Vector2(0, 76)

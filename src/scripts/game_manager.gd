@@ -4,9 +4,19 @@ extends Node
 const SIN_MAX: int = 100
 const SIN_MIN: int = 0
 
+const STARTING_CARD: String = "id1_first_day_of_school"
+
 @export var sin_bars: Array[DeadlySin]
 @export var card_position: Marker2D
 @export var cards: Node2D
+
+@export var choice_one_area: Area2D
+@export var choice_one_label: RichTextLabel
+@export var choice_two_area: Area2D
+@export var choice_two_label: RichTextLabel
+
+@export_flags_2d_physics var choice_one_layer: int
+@export_flags_2d_physics var choice_two_layer: int
 
 var sin_scores: Array[int]
 
@@ -20,8 +30,23 @@ func _ready() -> void:
 
     extract_prompts_from_jsons()
 
-    print(all_prompts_list["id1"])
-    cards.add_child(PromptCard.new_card(all_prompts_list["id1"]))
+    # print(all_prompts_list["id1_first_day_of_school"])
+    cards.add_child(PromptCard.new_card(all_prompts_list["id1_first_day_of_school"]))
+
+
+func setup_card(id: String) -> bool:
+    if not all_prompts_list.has(id):
+        return false
+    var card_info = all_prompts_list[id]
+
+    var card: PromptCard = PromptCard.new_card(card_info)
+
+    cards.add_child(card)
+
+    choice_one_label.text = card_info[Constants.CHOICE_1_TEXT]
+    choice_two_label.text = card_info[Constants.CHOICE_2_TEXT]
+
+    return true
 
 
 func extract_prompts_from_jsons() -> void:

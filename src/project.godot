@@ -36,6 +36,8 @@ mouse_click={
 
 [layer_names]
 
+2d_physics/layer_5="Choice 1 Area"
+2d_physics/layer_6="Choice 2 Area"
 2d_physics/layer_10="Mouse"
 
 [physics]
