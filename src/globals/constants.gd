@@ -21,6 +21,7 @@ const CHOICE_1_TEXT = "choice_one_text"
 const CHOICE_2_TEXT = "choice_two_text"
 const CHOICE_1_CONSQ = "choice_one_consequences"
 const CHOICE_2_CONSQ = "choice_two_consequences"
+const NEXT_QUESTIONS = "next_questions"
 
 const PROMPT_JSONS: Array[String] = [
     "res://assets/prompts/test1.json",

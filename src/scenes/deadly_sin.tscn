@@ -32,7 +32,7 @@ offset_left = 98.0
 offset_right = 368.0
 offset_bottom = 27.0
 theme = ExtResource("1_62gf6")
-value = 50.0
+value = 10.0
 show_percentage = false
 
 [node name="Value" type="Label" parent="ProgressBar" unique_id=1663470546]

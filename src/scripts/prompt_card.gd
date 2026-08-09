@@ -22,6 +22,7 @@ var is_mouse_entered: bool = false
 
 # var is_animation_playing: bool = false
 var position_difference: Vector2 = Vector2.ZERO
+var original_position: Vector2 = Vector2.ZERO
 
 
 # var previous_percentage: float = 0
@@ -37,39 +38,18 @@ func _input(event: InputEvent) -> void:
         return
 
     if Input.is_action_just_pressed("mouse_click"):
-        print("Case 1")
-
-        #     # Mouse is hovering over card and click
-        # var position_difference = CollisionUtil.get_mouse_position()
         position_difference = global_position - CollisionUtil.get_mouse_position()
-        # global_position = CollisionUtil.get_mouse_position()
-    #     is_animation_playing = true
-    #     previous_percentage = 0
+        original_position = global_position
+        print("emitting holding_card true")
+        SignalBus.holding_card.emit(true)
 
     elif Input.is_action_pressed("mouse_click"):
         global_position = CollisionUtil.get_mouse_position() + position_difference
 
-    #     # Mouse is holding, animation playing (mouse could be out of the card,
-    #     # but as long as holding then it still counts)
-    #     var current_mouse_position = CollisionUtil.get_mouse_position()
-    #     var mouse_move_distance = current_mouse_position.x - position_difference.x
-    #     if mouse_move_distance < 0 and mouse_move_distance > -mouse_movement_threshold:
-    #         # Moving to the left
-    #         print("Playing")
-    #         animation_player.play_section(SWIPE_LEFT_ANIM, 0, 1, -1, 2)
-    #         animation_player.get
-    #     elif mouse_move_distance > 0 and mouse_move_distance < mouse_movement_threshold:
-    #         animation_player.play_section(SWIPE_RIGHT_ANIM, 0, 1, -1, 2)
-
-    # elif Input.is_action_just_released("mouse_click"):
-    #     print("Case 3")
-
-    #     # Mouse drop
-    #     is_animation_playing = false
-    #     position_difference = Vector2.ZERO
-
-    # else:
-    #     print("Case 4???")
+    elif Input.is_action_just_released("mouse_click"):
+        global_position = original_position
+        print("emitting holding_card false")
+        SignalBus.holding_card.emit(false)
 
 
 func load_card(card_info: Dictionary) -> void:

@@ -70,6 +70,8 @@ offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_yl6u6")
+theme_override_font_sizes/normal_font_size = 41
+text = "test"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -94,12 +96,15 @@ offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_yl6u6")
+theme_override_font_sizes/normal_font_size = 41
+text = "test"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="===========================" type="Node" parent="." unique_id=769921115]
 
 [node name="Button" type="Button" parent="." unique_id=834242002 node_paths=PackedStringArray("game_manager")]
+visible = false
 offset_left = 524.0
 offset_top = -314.0
 offset_right = 568.0
@@ -125,6 +130,6 @@ choice_one_layer = 16
 choice_two_layer = 32
 
 [node name="CardPosition" type="Marker2D" parent="." unique_id=978477501]
-position = Vector2(0, 76)
+position = Vector2(0, -120)
 
 [node name="Mouse" parent="." unique_id=1465750978 instance=ExtResource("4_6xoaw")]

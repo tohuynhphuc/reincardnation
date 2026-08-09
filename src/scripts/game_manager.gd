@@ -22,16 +22,33 @@ var sin_scores: Array[int]
 
 var all_prompts_list: Dictionary
 
+## Initialize this value with the FIRST CARD (Hardcoded)
+var current_card_id: String = "id1_first_day_of_school"
+var need_change_card: bool = true
+var is_holding_card: bool = false
+
 
 func _ready() -> void:
     cards.position = card_position.position
     if not check_sins_before_start():
         printerr("SINS ARE INCORRECTLY INITIALIZED. Check GameManager!")
+    print(sin_scores)
 
     extract_prompts_from_jsons()
 
-    # print(all_prompts_list["id1_first_day_of_school"])
-    cards.add_child(PromptCard.new_card(all_prompts_list["id1_first_day_of_school"]))
+    # setup_card(current_card_id)
+    SignalBus.mouse_collision.connect(confirm_choice)
+    SignalBus.holding_card.connect(set_holding_card)
+
+
+func _process(delta: float) -> void:
+    if need_change_card:
+        setup_card(current_card_id)
+        need_change_card = false
+
+
+func set_holding_card(is_holding: bool) -> void:
+    is_holding_card = is_holding
 
 
 func setup_card(id: String) -> bool:
@@ -42,11 +59,44 @@ func setup_card(id: String) -> bool:
     var card: PromptCard = PromptCard.new_card(card_info)
 
     cards.add_child(card)
-
     choice_one_label.text = card_info[Constants.CHOICE_1_TEXT]
     choice_two_label.text = card_info[Constants.CHOICE_2_TEXT]
 
     return true
+
+
+func confirm_choice(layer: int) -> void:
+    if not is_holding_card:
+        # Player is still holding the card. Don't need to check anything
+        # or
+        # Player is not holding any card.
+        print("Fail check here")
+        return
+
+    while Input.is_action_pressed("mouse_click"):
+        await get_tree().create_timer(0.2).timeout
+
+    # Player has released the card
+    var card_info = all_prompts_list[current_card_id]
+    if CollisionUtil.is_layer_in_mask(choice_one_layer, layer):
+        print("Choice one is made")
+        var consequences = card_info[Constants.CHOICE_1_CONSQ] as Dictionary
+        for i in consequences.size():
+            print(consequences.keys()[i], " ", consequences.values()[i])
+            modify_sin(Constants.SINS_TO_ENUM[consequences.keys()[i]], consequences.values()[i])
+    elif CollisionUtil.is_layer_in_mask(choice_two_layer, layer):
+        print("Choice two is made")
+        var consequences = card_info[Constants.CHOICE_2_CONSQ] as Dictionary
+        for i in consequences.size():
+            print(consequences.keys()[i], " ", consequences.values()[i])
+            modify_sin(Constants.SINS_TO_ENUM[consequences.keys()[i]], consequences.values()[i])
+    else:
+        printerr("Nothing should be here. Check Game Manager")
+        return
+
+    var next_questions: Array = card_info[Constants.NEXT_QUESTIONS]
+    current_card_id = next_questions[randi_range(0, next_questions.size() - 1)]
+    need_change_card = true
 
 
 func extract_prompts_from_jsons() -> void:
