@@ -1,0 +1,44 @@
+{
+    "id_INSERT_YOUR_ID_NAME": {
+        "prompt_text": "THIS IS A QUESTION",
+        "choice_one_text": "CHOICE A",
+        "choice_one_consequences": {
+            "Greed": 0,
+            "Gluttony": 0,
+            "Lust": 0,
+            "Envy": 0,
+            "Sloth": 0,
+            "Wrath": 0,
+            "Pride": 0
+        },
+        "choice_two_text": "CHOICE B",
+        "choice_two_consequences": {
+            "Greed": 0,
+            "Gluttony": 0,
+            "Lust": 0,
+            "Envy": 0,
+            "Sloth": 0,
+            "Wrath": 0,
+            "Pride": 0
+        },
+        "min_threshold": {
+            "Greed": 0,
+            "Gluttony": 0,
+            "Lust": 0,
+            "Envy": 0,
+            "Sloth": 0,
+            "Wrath": 0,
+            "Pride": 0
+        },
+        "max_threshold": {
+            "Greed": 100,
+            "Gluttony": 100,
+            "Lust": 100,
+            "Envy": 100,
+            "Sloth": 100,
+            "Wrath": 100,
+            "Pride": 100
+        },
+        "next_questions": ["id2", "id3"]
+    }
+}
